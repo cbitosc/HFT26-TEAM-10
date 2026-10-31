@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shadowscope-detect"
+version = "0.2.0"
+description = "ShadowScope detection engine"
+requires-python = ">=3.11"
+dependencies = ["httpx"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+shadowscope-scan = "shadowscope_detect.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["shadowscope_detect*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests"]
